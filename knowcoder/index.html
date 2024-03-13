@@ -723,10 +723,322 @@
     <div class="columns is-centered has-text-centered">
       <!-- <div class="column is-full-width has-text-centered"> -->
       <div class="column is-four-fifths" style="vertical-align: middle">
+        <h2 class="title is-3">Results under zero-shot setting</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>After Schema Understanding and Schema Following on LLaMA2, we can obtain the KnowCoder.</b>
+          </p>
+          <p>
+          To verify the generalization ability of KnowCoder, we conduct zero-shot experiments on <b>9</b> datasets across NER, RE, and ED tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths" style="vertical-align: middle">
+        <h2 class="title is-4">Results on NER</h2>
+      </div>
+    </div>
+
+<div class="table-container">
+  <table class="wide-table" align="center">
+      <tr>
+        <th style="text-align: center; vertical-align: middle;" rowspan="2">Model</th>
+        <th style="text-align: center; vertical-align: middle;" rowspan="2">Movie</th>
+        <th style="text-align: center; vertical-align: middle;" rowspan="2">Rest.</th>
+        <th style="text-align: center; vertical-align: middle;">AI</th>
+        <th style="text-align: center; vertical-align: middle;">Litera.</th>
+        <th style="text-align: center; vertical-align: middle;">Music</th>
+        <th style="text-align: center; vertical-align: middle;">Politics</th>
+        <th style="text-align: center; vertical-align: middle;">Science</th>
+        <th style="text-align: center; vertical-align: middle;">Average</th>
+      </tr>
+
+      <tbody>
+
+        <tr>
+          <td class="italic-cell" style="text-align: center; vertical-align: middle;"><b>w.refinement</b></td> <!-- 1% 单元格跨越三行 -->
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center; vertical-align: middle;">InstructUIE-11B</td> <!-- 1% 单元格跨越三行 -->
+          <td style="text-align: center; vertical-align: middle;">-</td>
+          <td style="text-align: center; vertical-align: middle;">-</td>
+          <td style="text-align: center; vertical-align: middle;">48.4</td>
+          <td style="text-align: center; vertical-align: middle;">48.8</td>
+          <td style="text-align: center; vertical-align: middle;">54.4</td>
+          <td style="text-align: center; vertical-align: middle;">49.9</td>
+          <td style="text-align: center; vertical-align: middle;">49.4</td>
+          <td style="text-align: center; vertical-align: middle;">-</td>
+        </tr>
+        <tr>
+          <td style="text-align: center; vertical-align: middle;">GoLLIE-7B</td>
+          <td style="text-align: center; vertical-align: middle;">63.0</td>
+          <td style="text-align: center; vertical-align: middle;">43.4</td>
+          <td style="text-align: center; vertical-align: middle;">59.1</td>
+          <td style="text-align: center; vertical-align: middle;">62.7</td>
+          <td style="text-align: center; vertical-align: middle;">67.8</td>
+          <td style="text-align: center; vertical-align: middle;">57.2</td>
+          <td style="text-align: center; vertical-align: middle;">55.5</td>
+          <td style="text-align: center; vertical-align: middle;">58.4</td>
+        </tr>
+        <tr>
+          <td style="text-align: center; vertical-align: middle;">GoLLIE-13B</td>
+          <td style="text-align: center; vertical-align: middle;">62.5</td>
+          <td style="text-align: center; vertical-align: middle;">49.8</td>
+          <td style="text-align: center; vertical-align: middle;">56.7</td>
+          <td style="text-align: center; vertical-align: middle;">59.7</td>
+          <td style="text-align: center; vertical-align: middle;">65.5</td>
+          <td style="text-align: center; vertical-align: middle;">54.4</td>
+          <td style="text-align: center; vertical-align: middle;">56.2</td>
+          <td style="text-align: center; vertical-align: middle;">57.8</td>
+        </tr>
+
+        <tr class="bottom-border">
+          <td style="text-align: center; vertical-align: middle;">UniNER-7B refined</td>
+          <td style="text-align: center; vertical-align: middle;">59.4</td>
+          <td style="text-align: center; vertical-align: middle;">31.2</td>
+          <td style="text-align: center; vertical-align: middle;">62.6</td>
+          <td style="text-align: center; vertical-align: middle;">64.0</td>
+          <td style="text-align: center; vertical-align: middle;">66.6</td>
+          <td style="text-align: center; vertical-align: middle;">66.3</td>
+          <td style="text-align: center; vertical-align: middle;">69.8</td>
+          <td style="text-align: center; vertical-align: middle;">60.0</td>
+        </tr>
+
+        <tr>
+          <td class="italic-cell" style="text-align: center; vertical-align: middle;"><b>w.o.refinement</b></td> <!-- 1% 单元格跨越三行 -->
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: center; vertical-align: middle;">Vicuna-7B</td> <!-- 1% 单元格跨越三行 -->
+          <td style="text-align: center; vertical-align: middle;">6.0</td>
+          <td style="text-align: center; vertical-align: middle;">5.3</td>
+          <td style="text-align: center; vertical-align: middle;">12.8</td>
+          <td style="text-align: center; vertical-align: middle;">16.1</td>
+          <td style="text-align: center; vertical-align: middle;">17.0</td>
+          <td style="text-align: center; vertical-align: middle;">20.5</td>
+          <td style="text-align: center; vertical-align: middle;">13.0</td>
+          <td style="text-align: center; vertical-align: middle;">13.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center; vertical-align: middle;">Vicuna-13B</td>
+          <td style="text-align: center; vertical-align: middle;">0.9</td>
+          <td style="text-align: center; vertical-align: middle;">0.4</td>
+          <td style="text-align: center; vertical-align: middle;">22.7</td>
+          <td style="text-align: center; vertical-align: middle;">22.7</td>
+          <td style="text-align: center; vertical-align: middle;">26.6</td>
+          <td style="text-align: center; vertical-align: middle;">27.2</td>
+          <td style="text-align: center; vertical-align: middle;">22.0</td>
+          <td style="text-align: center; vertical-align: middle;">17.5</td>
+        </tr>
+        <tr> <!-- 底部边框线从1%这一行开始 -->
+          <td style="text-align: center; vertical-align: middle;">ChatGPT</td>
+          <td style="text-align: center; vertical-align: middle;">5.3</td>
+          <td style="text-align: center; vertical-align: middle;">32.8</td>
+          <td style="text-align: center; vertical-align: middle;">52.4</td>
+          <td style="text-align: center; vertical-align: middle;">39.8</td>
+          <td style="text-align: center; vertical-align: middle;">66.6</td>
+          <td style="text-align: center; vertical-align: middle;">68.5</td>
+          <td style="text-align: center; vertical-align: middle;"><b>67.0</b></td>
+          <td style="text-align: center; vertical-align: middle;">47.5</td>
+        </tr>
+        <tr> <!-- 底部边框线从1%这一行开始 -->
+          <td style="text-align: center; vertical-align: middle;">UniNER-7B</td>
+          <td style="text-align: center; vertical-align: middle;">42.4</td>
+          <td style="text-align: center; vertical-align: middle;">31.7</td>
+          <td style="text-align: center; vertical-align: middle;">53.5</td>
+          <td style="text-align: center; vertical-align: middle;">59.4</td>
+          <td style="text-align: center; vertical-align: middle;">65.0</td>
+          <td style="text-align: center; vertical-align: middle;">60.8</td>
+          <td style="text-align: center; vertical-align: middle;">61.1</td>
+          <td style="text-align: center; vertical-align: middle;">53.4</td>
+        </tr>
+        <tr class="bottom-border-color">
+          <td style="text-align: center; vertical-align: middle;">KnowCoder-7B</td>
+          <td style="text-align: center; vertical-align: middle;"><b>50.0</b></td>
+          <td style="text-align: center; vertical-align: middle;"><b>48.2</b></td>
+          <td style="text-align: center; vertical-align: middle;"><b>60.3</b></td>
+          <td style="text-align: center; vertical-align: middle;"><b>61.1</b></td>
+          <td style="text-align: center; vertical-align: middle;"><b>70.0</b></td>
+          <td style="text-align: center; vertical-align: middle;"><b>72.2</b></td>
+          <td style="text-align: center; vertical-align: middle;">59.1</td>
+          <td style="text-align: center; vertical-align: middle;"><b>60.1<sup>↑12.5%</sup></b></td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths" style="vertical-align: middle">
+        <h2 class="title is-4">Results on RE and ED</h2>
+      </div>
+    </div>
+
+<div class="table-container">
+  <table class="narrow-table" align="center">
+    <tr>
+      <th style="text-align: center; vertical-align: middle;" rowspan="3">Dataset</th>
+      <th style="text-align: center; vertical-align: middle;" rowspan="3">SoTA</th>
+      <th style="text-align: center; vertical-align: middle;" rowspan="3">KnowCoder</th>
+    </tr>
+    <tbody>
+      <tr>
+        <td style="text-align: center; vertical-align: middle;">GIDS<sub>RE</sub></td>
+        <td style="text-align: center; vertical-align: middle;">9.9</td>
+        <td style="text-align: center; vertical-align: middle;"><b>25.5</b></td>
+      </tr>
+      <tr class="bottom-border">
+        <td style="text-align: center; vertical-align: middle;">CASIE<sub>ED</sub></td>
+        <td style="text-align: center; vertical-align: middle;"><b>59.3</b></td>
+        <td style="text-align: center; vertical-align: middle;">56.3</td>
+      </tr>
+      <tr class="bottom-border">
+        <td style="text-align: center; vertical-align: middle;">Average</td>
+        <td style="text-align: center; vertical-align: middle;">34.6</td>
+        <td style="text-align: center; vertical-align: middle;"><b>41.9<sup>↑21.1%</sup></b></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths" style="vertical-align: middle">
+        <h2 class="title is-3">Results under low-resource setting</h2>
+        <div class="content has-text-justified">
+          <p>
+            To further investigate the generalization ability of KnowCoder for IE tasks, we conduct experiments by refine KnowCoder with three different partitions of the original training sets (1/5/10% ratio) across four tasks to further evaluate its performance in low-resource scenarios.
+          </p>
+            <div class="table-container">
+                  <table class="medium-table" align="center">
+                    <tr>
+                      <th style="text-align: center; vertical-align: middle;" rowspan="2">Ratio</th>
+                      <th style="text-align: center; vertical-align: middle;" rowspan="2">Model</th>
+                      <th style="text-align: center; vertical-align: middle;" colspan="4">Task</th>
+                      <th style="text-align: center; vertical-align: middle;" rowspan="2">Ave</th>
+                    </tr>
+                    <tr>
+                      <th style="text-align: center; vertical-align: middle;">NER</th>
+                      <th style="text-align: center; vertical-align: middle;">RE</th>
+                      <th style="text-align: center; vertical-align: middle;">ED</th>
+                      <th style="text-align: center; vertical-align: middle;">EAE</th>
+                    </tr>
+                    <tbody>
+
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;" rowspan="3">1%</td> <!-- 1% 单元格跨越三行 -->
+                        <td style="text-align: center; vertical-align: middle;">UIE-base</td>
+                        <td style="text-align: center; vertical-align: middle;"><b>82.8</b></td>
+                        <td style="text-align: center; vertical-align: middle;">30.8</td>
+                        <td style="text-align: center; vertical-align: middle;">41.5</td>
+                        <td style="text-align: center; vertical-align: middle;">12.8</td>
+                        <td style="text-align: center; vertical-align: middle;">42.0</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;">LLaMA2-7B</td>
+                        <td style="text-align: center; vertical-align: middle;">72.3</td>
+                        <td style="text-align: center; vertical-align: middle;">32.1</td>
+                        <td style="text-align: center; vertical-align: middle;">35.3</td>
+                        <td style="text-align: center; vertical-align: middle;">33.3</td>
+                        <td style="text-align: center; vertical-align: middle;">43.3</td>
+                      </tr>
+                      <tr class="highlight"> <!-- 底部边框线从1%这一行开始 -->
+                        <td style="text-align: center; vertical-align: middle;">KnowCoder-7B</td>
+                        <td style="text-align: center; vertical-align: middle;">79.2</td>
+                        <td style="text-align: center; vertical-align: middle;"><b>43.3</b></td>
+                        <td style="text-align: center; vertical-align: middle;"><b>50.3</b></td>
+                        <td style="text-align: center; vertical-align: middle;"><b>38.5</b></td>
+                        <td style="text-align: center; vertical-align: middle;"><b>52.8<sup>↑21.9%</sup></b></td>
+                      </tr>
+
+                      <tr class="top-border">
+                        <td style="text-align: center; vertical-align: middle;" rowspan="3">5%</td> <!-- 1% 单元格跨越三行 -->
+                        <td style="text-align: center; vertical-align: middle;">UIE-base</td>
+                        <td style="text-align: center; vertical-align: middle;">88.3</td>
+                        <td style="text-align: center; vertical-align: middle;"><b>51.7</b></td>
+                        <td style="text-align: center; vertical-align: middle;">55.7</td>
+                        <td style="text-align: center; vertical-align: middle;">30.4</td>
+                        <td style="text-align: center; vertical-align: middle;">56.5</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;">LLaMA2-7B</td>
+                        <td style="text-align: center; vertical-align: middle;">89.3</td>
+                        <td style="text-align: center; vertical-align: middle;">35.7</td>
+                        <td style="text-align: center; vertical-align: middle;">52.6</td>
+                        <td style="text-align: center; vertical-align: middle;">46.3</td>
+                        <td style="text-align: center; vertical-align: middle;">56.0</td>
+                      </tr>
+                      <tr class="highlight">
+                        <td style="text-align: center; vertical-align: middle;">KnowCoder-7B</td>
+                        <td style="text-align: center; vertical-align: middle;"><b>90.6</b></td>
+                        <td style="text-align: center; vertical-align: middle;">51.1</td>
+                        <td style="text-align: center; vertical-align: middle;"><b>59.0</b></td>
+                        <td style="text-align: center; vertical-align: middle;"><b>48.3</b></td>
+                        <td style="text-align: center; vertical-align: middle;"><b>62.3<sup>↑10.3%</sup></b></td>
+                      </tr>
+
+                      <tr class="top-border">
+                        <td class="underline-cell" style="text-align: center; vertical-align: middle;" rowspan="3">10%</td> <!-- 1% 单元格跨越三行 -->
+                        <td style="text-align: center; vertical-align: middle;">UIE-base</td>
+                        <td style="text-align: center; vertical-align: middle;">89.6</td>
+                        <td style="text-align: center; vertical-align: middle;"><b>59.2</b></td>
+                        <td style="text-align: center; vertical-align: middle;">60.3</td>
+                        <td style="text-align: center; vertical-align: middle;">36.3</td>
+                        <td style="text-align: center; vertical-align: middle;">61.4</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;">LLaMA2-7B</td>
+                        <td style="text-align: center; vertical-align: middle;">91.2</td>
+                        <td style="text-align: center; vertical-align: middle;">48.6</td>
+                        <td style="text-align: center; vertical-align: middle;">60.7</td>
+                        <td style="text-align: center; vertical-align: middle;">52.3</td>
+                        <td style="text-align: center; vertical-align: middle;">63.2</td>
+                      </tr>
+                      <tr class="bottom-border-color">
+                        <td style="text-align: center; vertical-align: middle;">KnowCoder-7B</td>
+                        <td style="text-align: center; vertical-align: middle;"><b>92.2</b></td>
+                        <td style="text-align: center; vertical-align: middle;">53.6</td>
+                        <td style="text-align: center; vertical-align: middle;"><b>62.2</b></td>
+                        <td style="text-align: center; vertical-align: middle;"><b>55.1</b></td>
+                        <td style="text-align: center; vertical-align: middle;"><b>65.8<sup>↑4.1%</sup></b></td>
+                      </tr>
+
+
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths" style="vertical-align: middle">
         <h2 class="title is-3">Results under supervised setting</h2>
         <div class="content has-text-justified">
           <p>
-          We conduct supervised experiments on four IE tasks, including NER, RE, ED, and EAE.
+            <b>Based on our unified schema representations, various human-annotated datasets can simultaneously be utilized to refine KnowCoder.</b>
+          </p>
+          <p>
+            To further investigate the IE ability of KnowCoder, we conduct supervised experiments on four IE tasks, including NER, RE, ED, and EAE. Under the supervised evaluation, KnowCoder is further refined with <b>28</b> IE datasets.
           </p>
         </div>
       </div>
@@ -978,312 +1290,6 @@
         </table>
     </div>
 
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-      <div class="column is-four-fifths" style="vertical-align: middle">
-        <h2 class="title is-3">Results under zero-shot setting</h2>
-        <div class="content has-text-justified">
-          <p>
-          To verify the generalization ability of KnowCoder, we conduct zero-shot experiments on nine datasets across NER, RE, and ED tasks.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-      <div class="column is-four-fifths" style="vertical-align: middle">
-        <h2 class="title is-4">Results on NER</h2>
-      </div>
-    </div>
-
-<div class="table-container">
-  <table class="wide-table" align="center">
-      <tr>
-        <th style="text-align: center; vertical-align: middle;" rowspan="2">Model</th>
-        <th style="text-align: center; vertical-align: middle;" rowspan="2">Movie</th>
-        <th style="text-align: center; vertical-align: middle;" rowspan="2">Rest.</th>
-        <th style="text-align: center; vertical-align: middle;">AI</th>
-        <th style="text-align: center; vertical-align: middle;">Litera.</th>
-        <th style="text-align: center; vertical-align: middle;">Music</th>
-        <th style="text-align: center; vertical-align: middle;">Politics</th>
-        <th style="text-align: center; vertical-align: middle;">Science</th>
-        <th style="text-align: center; vertical-align: middle;">Average</th>
-      </tr>
-
-      <tbody>
-
-        <tr>
-          <td class="italic-cell" style="text-align: center; vertical-align: middle;"><b>w.refinement</b></td> <!-- 1% 单元格跨越三行 -->
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td style="text-align: center; vertical-align: middle;">InstructUIE-11B</td> <!-- 1% 单元格跨越三行 -->
-          <td style="text-align: center; vertical-align: middle;">-</td>
-          <td style="text-align: center; vertical-align: middle;">-</td>
-          <td style="text-align: center; vertical-align: middle;">48.4</td>
-          <td style="text-align: center; vertical-align: middle;">48.8</td>
-          <td style="text-align: center; vertical-align: middle;">54.4</td>
-          <td style="text-align: center; vertical-align: middle;">49.9</td>
-          <td style="text-align: center; vertical-align: middle;">49.4</td>
-          <td style="text-align: center; vertical-align: middle;">-</td>
-        </tr>
-        <tr>
-          <td style="text-align: center; vertical-align: middle;">GoLLIE-7B</td>
-          <td style="text-align: center; vertical-align: middle;">63.0</td>
-          <td style="text-align: center; vertical-align: middle;">43.4</td>
-          <td style="text-align: center; vertical-align: middle;">59.1</td>
-          <td style="text-align: center; vertical-align: middle;">62.7</td>
-          <td style="text-align: center; vertical-align: middle;">67.8</td>
-          <td style="text-align: center; vertical-align: middle;">57.2</td>
-          <td style="text-align: center; vertical-align: middle;">55.5</td>
-          <td style="text-align: center; vertical-align: middle;">58.4</td>
-        </tr>
-        <tr>
-          <td style="text-align: center; vertical-align: middle;">GoLLIE-13B</td>
-          <td style="text-align: center; vertical-align: middle;">62.5</td>
-          <td style="text-align: center; vertical-align: middle;">49.8</td>
-          <td style="text-align: center; vertical-align: middle;">56.7</td>
-          <td style="text-align: center; vertical-align: middle;">59.7</td>
-          <td style="text-align: center; vertical-align: middle;">65.5</td>
-          <td style="text-align: center; vertical-align: middle;">54.4</td>
-          <td style="text-align: center; vertical-align: middle;">56.2</td>
-          <td style="text-align: center; vertical-align: middle;">57.8</td>
-        </tr>
-
-        <tr class="bottom-border">
-          <td style="text-align: center; vertical-align: middle;">UniNER-7B refined</td>
-          <td style="text-align: center; vertical-align: middle;">59.4</td>
-          <td style="text-align: center; vertical-align: middle;">31.2</td>
-          <td style="text-align: center; vertical-align: middle;">62.6</td>
-          <td style="text-align: center; vertical-align: middle;">64.0</td>
-          <td style="text-align: center; vertical-align: middle;">66.6</td>
-          <td style="text-align: center; vertical-align: middle;">66.3</td>
-          <td style="text-align: center; vertical-align: middle;">69.8</td>
-          <td style="text-align: center; vertical-align: middle;">60.0</td>
-        </tr>
-
-        <tr>
-          <td class="italic-cell" style="text-align: center; vertical-align: middle;"><b>w.o.refinement</b></td> <!-- 1% 单元格跨越三行 -->
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td style="text-align: center; vertical-align: middle;">Vicuna-7B</td> <!-- 1% 单元格跨越三行 -->
-          <td style="text-align: center; vertical-align: middle;">6.0</td>
-          <td style="text-align: center; vertical-align: middle;">5.3</td>
-          <td style="text-align: center; vertical-align: middle;">12.8</td>
-          <td style="text-align: center; vertical-align: middle;">16.1</td>
-          <td style="text-align: center; vertical-align: middle;">17.0</td>
-          <td style="text-align: center; vertical-align: middle;">20.5</td>
-          <td style="text-align: center; vertical-align: middle;">13.0</td>
-          <td style="text-align: center; vertical-align: middle;">13.0</td>
-        </tr>
-        <tr>
-          <td style="text-align: center; vertical-align: middle;">Vicuna-13B</td>
-          <td style="text-align: center; vertical-align: middle;">0.9</td>
-          <td style="text-align: center; vertical-align: middle;">0.4</td>
-          <td style="text-align: center; vertical-align: middle;">22.7</td>
-          <td style="text-align: center; vertical-align: middle;">22.7</td>
-          <td style="text-align: center; vertical-align: middle;">26.6</td>
-          <td style="text-align: center; vertical-align: middle;">27.2</td>
-          <td style="text-align: center; vertical-align: middle;">22.0</td>
-          <td style="text-align: center; vertical-align: middle;">17.5</td>
-        </tr>
-        <tr> <!-- 底部边框线从1%这一行开始 -->
-          <td style="text-align: center; vertical-align: middle;">ChatGPT</td>
-          <td style="text-align: center; vertical-align: middle;">5.3</td>
-          <td style="text-align: center; vertical-align: middle;">32.8</td>
-          <td style="text-align: center; vertical-align: middle;">52.4</td>
-          <td style="text-align: center; vertical-align: middle;">39.8</td>
-          <td style="text-align: center; vertical-align: middle;">66.6</td>
-          <td style="text-align: center; vertical-align: middle;">68.5</td>
-          <td style="text-align: center; vertical-align: middle;"><b>67.0</b></td>
-          <td style="text-align: center; vertical-align: middle;">47.5</td>
-        </tr>
-        <tr> <!-- 底部边框线从1%这一行开始 -->
-          <td style="text-align: center; vertical-align: middle;">UniNER-7B</td>
-          <td style="text-align: center; vertical-align: middle;">42.4</td>
-          <td style="text-align: center; vertical-align: middle;">31.7</td>
-          <td style="text-align: center; vertical-align: middle;">53.5</td>
-          <td style="text-align: center; vertical-align: middle;">59.4</td>
-          <td style="text-align: center; vertical-align: middle;">65.0</td>
-          <td style="text-align: center; vertical-align: middle;">60.8</td>
-          <td style="text-align: center; vertical-align: middle;">61.1</td>
-          <td style="text-align: center; vertical-align: middle;">53.4</td>
-        </tr>
-        <tr class="bottom-border-color">
-          <td style="text-align: center; vertical-align: middle;">KnowCoder-7B</td>
-          <td style="text-align: center; vertical-align: middle;"><b>50.0</b></td>
-          <td style="text-align: center; vertical-align: middle;"><b>48.2</b></td>
-          <td style="text-align: center; vertical-align: middle;"><b>60.3</b></td>
-          <td style="text-align: center; vertical-align: middle;"><b>61.1</b></td>
-          <td style="text-align: center; vertical-align: middle;"><b>70.0</b></td>
-          <td style="text-align: center; vertical-align: middle;"><b>72.2</b></td>
-          <td style="text-align: center; vertical-align: middle;">59.1</td>
-          <td style="text-align: center; vertical-align: middle;"><b>60.1<sup>↑12.5%</sup></b></td>
-        </tr>
-      </tbody>
-  </table>
-</div>
-
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-      <div class="column is-four-fifths" style="vertical-align: middle">
-        <h2 class="title is-4">Results on RE and ED</h2>
-      </div>
-    </div>
-
-<div class="table-container">
-  <table class="narrow-table" align="center">
-    <tr>
-      <th style="text-align: center; vertical-align: middle;" rowspan="3">Dataset</th>
-      <th style="text-align: center; vertical-align: middle;" rowspan="3">SoTA</th>
-      <th style="text-align: center; vertical-align: middle;" rowspan="3">KnowCoder</th>
-    </tr>
-    <tbody>
-      <tr>
-        <td style="text-align: center; vertical-align: middle;">GIDS<sub>RE</sub></td>
-        <td style="text-align: center; vertical-align: middle;">9.9</td>
-        <td style="text-align: center; vertical-align: middle;"><b>25.5</b></td>
-      </tr>
-      <tr class="bottom-border">
-        <td style="text-align: center; vertical-align: middle;">CASIE<sub>ED</sub></td>
-        <td style="text-align: center; vertical-align: middle;"><b>59.3</b></td>
-        <td style="text-align: center; vertical-align: middle;">56.3</td>
-      </tr>
-      <tr class="bottom-border">
-        <td style="text-align: center; vertical-align: middle;">Average</td>
-        <td style="text-align: center; vertical-align: middle;">34.6</td>
-        <td style="text-align: center; vertical-align: middle;"><b>41.9<sup>↑21.1%</sup></b></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-      <div class="column is-four-fifths" style="vertical-align: middle">
-        <h2 class="title is-3">Results under low-resource setting</h2>
-        <div class="content has-text-justified">
-          <p>
-          To further investigate the generalization ability of KnowCoder (without refinement) for IE tasks, we conduct low-resource experiments on three different partitions of the original training sets (1/5/10% ratio) across four tasks.
-          </p>
-            <div class="table-container">
-                  <table class="medium-table" align="center">
-                    <tr>
-                      <th style="text-align: center; vertical-align: middle;" rowspan="2">Ratio</th>
-                      <th style="text-align: center; vertical-align: middle;" rowspan="2">Model</th>
-                      <th style="text-align: center; vertical-align: middle;" colspan="4">Task</th>
-                      <th style="text-align: center; vertical-align: middle;" rowspan="2">Ave</th>
-                    </tr>
-                    <tr>
-                      <th style="text-align: center; vertical-align: middle;">NER</th>
-                      <th style="text-align: center; vertical-align: middle;">RE</th>
-                      <th style="text-align: center; vertical-align: middle;">ED</th>
-                      <th style="text-align: center; vertical-align: middle;">EAE</th>
-                    </tr>
-                    <tbody>
-
-                      <tr>
-                        <td style="text-align: center; vertical-align: middle;" rowspan="3">1%</td> <!-- 1% 单元格跨越三行 -->
-                        <td style="text-align: center; vertical-align: middle;">UIE-base</td>
-                        <td style="text-align: center; vertical-align: middle;"><b>82.8</b></td>
-                        <td style="text-align: center; vertical-align: middle;">30.8</td>
-                        <td style="text-align: center; vertical-align: middle;">41.5</td>
-                        <td style="text-align: center; vertical-align: middle;">12.8</td>
-                        <td style="text-align: center; vertical-align: middle;">42.0</td>
-                      </tr>
-                      <tr>
-                        <td style="text-align: center; vertical-align: middle;">LLaMA2-7B</td>
-                        <td style="text-align: center; vertical-align: middle;">72.3</td>
-                        <td style="text-align: center; vertical-align: middle;">32.1</td>
-                        <td style="text-align: center; vertical-align: middle;">35.3</td>
-                        <td style="text-align: center; vertical-align: middle;">33.3</td>
-                        <td style="text-align: center; vertical-align: middle;">43.3</td>
-                      </tr>
-                      <tr class="highlight"> <!-- 底部边框线从1%这一行开始 -->
-                        <td style="text-align: center; vertical-align: middle;">KnowCoder-7B</td>
-                        <td style="text-align: center; vertical-align: middle;">79.2</td>
-                        <td style="text-align: center; vertical-align: middle;"><b>43.3</b></td>
-                        <td style="text-align: center; vertical-align: middle;"><b>50.3</b></td>
-                        <td style="text-align: center; vertical-align: middle;"><b>38.5</b></td>
-                        <td style="text-align: center; vertical-align: middle;"><b>52.8<sup>↑21.9%</sup></b></td>
-                      </tr>
-
-                      <tr class="top-border">
-                        <td style="text-align: center; vertical-align: middle;" rowspan="3">5%</td> <!-- 1% 单元格跨越三行 -->
-                        <td style="text-align: center; vertical-align: middle;">UIE-base</td>
-                        <td style="text-align: center; vertical-align: middle;">88.3</td>
-                        <td style="text-align: center; vertical-align: middle;"><b>51.7</b></td>
-                        <td style="text-align: center; vertical-align: middle;">55.7</td>
-                        <td style="text-align: center; vertical-align: middle;">30.4</td>
-                        <td style="text-align: center; vertical-align: middle;">56.5</td>
-                      </tr>
-                      <tr>
-                        <td style="text-align: center; vertical-align: middle;">LLaMA2-7B</td>
-                        <td style="text-align: center; vertical-align: middle;">89.3</td>
-                        <td style="text-align: center; vertical-align: middle;">35.7</td>
-                        <td style="text-align: center; vertical-align: middle;">52.6</td>
-                        <td style="text-align: center; vertical-align: middle;">46.3</td>
-                        <td style="text-align: center; vertical-align: middle;">56.0</td>
-                      </tr>
-                      <tr class="highlight">
-                        <td style="text-align: center; vertical-align: middle;">KnowCoder-7B</td>
-                        <td style="text-align: center; vertical-align: middle;"><b>90.6</b></td>
-                        <td style="text-align: center; vertical-align: middle;">51.1</td>
-                        <td style="text-align: center; vertical-align: middle;"><b>59.0</b></td>
-                        <td style="text-align: center; vertical-align: middle;"><b>48.3</b></td>
-                        <td style="text-align: center; vertical-align: middle;"><b>62.3<sup>↑10.3%</sup></b></td>
-                      </tr>
-
-                      <tr class="top-border">
-                        <td class="underline-cell" style="text-align: center; vertical-align: middle;" rowspan="3">10%</td> <!-- 1% 单元格跨越三行 -->
-                        <td style="text-align: center; vertical-align: middle;">UIE-base</td>
-                        <td style="text-align: center; vertical-align: middle;">89.6</td>
-                        <td style="text-align: center; vertical-align: middle;"><b>59.2</b></td>
-                        <td style="text-align: center; vertical-align: middle;">60.3</td>
-                        <td style="text-align: center; vertical-align: middle;">36.3</td>
-                        <td style="text-align: center; vertical-align: middle;">61.4</td>
-                      </tr>
-                      <tr>
-                        <td style="text-align: center; vertical-align: middle;">LLaMA2-7B</td>
-                        <td style="text-align: center; vertical-align: middle;">91.2</td>
-                        <td style="text-align: center; vertical-align: middle;">48.6</td>
-                        <td style="text-align: center; vertical-align: middle;">60.7</td>
-                        <td style="text-align: center; vertical-align: middle;">52.3</td>
-                        <td style="text-align: center; vertical-align: middle;">63.2</td>
-                      </tr>
-                      <tr class="bottom-border-color">
-                        <td style="text-align: center; vertical-align: middle;">KnowCoder-7B</td>
-                        <td style="text-align: center; vertical-align: middle;"><b>92.2</b></td>
-                        <td style="text-align: center; vertical-align: middle;">53.6</td>
-                        <td style="text-align: center; vertical-align: middle;"><b>62.2</b></td>
-                        <td style="text-align: center; vertical-align: middle;"><b>55.1</b></td>
-                        <td style="text-align: center; vertical-align: middle;"><b>65.8<sup>↑4.1%</sup></b></td>
-                      </tr>
-
-
-                    </tbody>
-                  </table>
-            </div>
-        </div>
-      </div>
-    </div>
   </div>
 
 
