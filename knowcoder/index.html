@@ -264,7 +264,7 @@
           We construct the code-style schema library under this schema representation method based on Wikidata (Note that we use the Wikidata dump up to 20220704). We select the concepts included in the existing IE datasets created from Wikidata, i.e., <a href="https://github.com/google-research-datasets/KELM-corpus">KELM</a>, <a href="https://huggingface.co/Universal-NER">UniversalNER</a>, <a href="https://huggingface.co/datasets/zjunlp/InstructIE">InstructIE</a>, and <a href="https://github.com/acl2017submission/event-data">LSEE</a>, and derive the constraints among concepts according to their co-occurrences. To construct the taxonomies, we extract the "subclass of" relations among these concepts from Wikidata. To obtain the description of a concept, we use its definition from Wikidata directly or generate its descriptions using GPT-4 if its definition in Wikidata is missing. Finally, the constructed schema library encompasses over 29,177 entity types, 876 relation types, and 519 event types. The detailed statistics of the schema are shown in Table \ref{schema_stat}. Here, "#Type" denotes the total number of types, "#Type w/ desc." indicates the count of types with descriptions, and "#Type w/o desc." signifies the count of types without descriptions.
           </p>
           <p>
-          The schema library data can be found in 🤗<a href="https://huggingface.co/datasets/ICT-GoKnow/Schema-Library">Schema-Librart</a>.
+          The schema library data can be found in 🤗<a href="https://huggingface.co/datasets/ICT-GoKnow/Schema-Library">Schema-Library</a>.
           </p>
         </div>
       </div>
